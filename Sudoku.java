@@ -29,22 +29,22 @@ public class Sudoku
         {
             if (y >= 0 && y < 3)
             {
-                for (i=0; i<3; i++)
-                for (j=0; j<3; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 3 && y < 6)
             {
-                for (i=3; i<6; i++)
-                for (j=3; j<6; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 6 && y < 9)
             {
-                for (i=6; i<9; i++)
-                for (j=6; j<9; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
@@ -53,22 +53,22 @@ public class Sudoku
         {
             if (y >= 0 && y < 3)
             {
-                for (i=0; i<3; i++)
-                for (j=0; j<3; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 3 && y < 6)
             {
-                for (i=3; i<6; i++)
-                for (j=3; j<6; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 6 && y < 9)
             {
-                for (i=6; i<9; i++)
-                for (j=6; j<9; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
@@ -77,22 +77,22 @@ public class Sudoku
         {
             if (y >= 0 && y < 3)
             {
-                for (i=0; i<3; i++)
-                for (j=0; j<3; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 3 && y < 6)
             {
-                for (i=3; i<6; i++)
-                for (j=3; j<6; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
             else if (y >= 6 && y < 9)
             {
-                for (i=6; i<9; i++)
-                for (j=6; j<9; j++)
+                for (int i=0; i<3; i++)
+                for (int j=0; j<3; j++)
                 if (l == matriz[i][j])
                 return true;
             }
