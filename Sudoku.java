@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.net.ssl.ExtendedSSLSession;
+
 public class Sudoku
 {
     static int matriz[][];
@@ -9,18 +11,18 @@ public class Sudoku
         matriz = leerMatriz();
         System.out.println("Sudoku ingresado.");
 
-        backtracking(matriz, 0);
+        backtracking(matriz, 0, 0, -1);
     }
 
-    public static void backtracking(int [][] m,int l)
+    public static void backtracking(int [][] m,int fila, int columna, int l)
     {
         if(Reject(l, 0, 0)) return;
-        if(Accept()) output();
-        /*
+        if(Accept(m, fila, columna)) output();
+        
         if(First()) do {
             backtracking(x,l+1);
         } while(Next(m,l+1));
-        */
+        
     }
 
     static boolean Reject(int l, int x, int y) 
@@ -106,9 +108,12 @@ public class Sudoku
         return false;
     }
 
-    static boolean Accept() 
+    static boolean Accept(int[][] m, int x, int y) 
     {
+        if (siguienteCelda(m, x, y)==null)
         return true;
+        return false;
+
     }
 
     static void output() 
@@ -120,6 +125,7 @@ public class Sudoku
             System.out.print(matriz[i][j] + " ");
             System.out.println();
         }
+        System.exit(0);
         
     }
 
@@ -130,6 +136,7 @@ public class Sudoku
 
     static boolean Next() 
     {
+
         return true;
     }
 
@@ -142,6 +149,28 @@ public class Sudoku
                 matriz[i][j] = sc.nextInt();
         sc.close();
         return matriz;
+    }
+
+    static int[] siguienteCelda(int[][] matriz, int x, int y)
+    {
+        int[] pos = new int[] {x, y};
+        while (x<8)
+        {
+            pos[0]++;
+            if (matriz[pos[0]][pos[1]]==0)
+            return pos;
+        }
+        if (y<8)
+        {
+            pos[0]=0;
+            pos[1]++;
+            
+        }
+        else
+        {
+            return null;
+        }
+        return pos;
     }
 
 }

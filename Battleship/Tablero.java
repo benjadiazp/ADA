@@ -60,7 +60,7 @@ public class Tablero{
     Imprimir();
     return intentos;
   }
-  private void Imprimir(){
+  public void Imprimir(){
     for(int i=1;i<t[0].length-1;i++){
       for(int j=1;j<t.length-1;j++)
       	System.out.print(t[i][j] + " ");
