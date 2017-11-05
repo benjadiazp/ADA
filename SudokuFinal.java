@@ -21,7 +21,7 @@ public class SudokuFinal
     
         if (siguienteCelda(matriz, new int[] { 0, -1 }) != null) //Comprueba si hay espacios vacìos.
         {
-            //La celda es un arreglo tamaño 2, donde c[0] = x y c[1] = y.
+            //La posición de la celda es un arreglo tamaño 2, donde c[0] = x y c[1] = y.
             backtracking(matriz, new int[] { 0, -1 });
             System.out.println("\n\nNo hay solución.\n");
             imprimirMatriz(new int[9][9]); //Matriz de ceros.
