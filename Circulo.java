@@ -18,8 +18,8 @@ public class Circulo
         Scanner s = new Scanner(System.in);
         n = s.nextInt();
         m = s.nextInt();
-        posX = s.nextInt();
         posY = s.nextInt();
+        posX = s.nextInt();
         r = s.nextInt();
 
         matriz = new char[n][m];
@@ -57,7 +57,6 @@ public class Circulo
 
                     if (posX - i < n && posY - j < m && posX - i >= 0 && posY - j >=0)
                         matriz[posX - i][posY - j] = '#';
-
                 }
             }
         }

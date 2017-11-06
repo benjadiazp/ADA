@@ -82,6 +82,16 @@ public class SudokuFinal
     {
         if (siguienteCelda(m, c) == null) //Si no quedan celdas vacías, el sudoku está completo.
         {
+            int[] arr = new int[9];
+            int aux=0;
+            for (int i=0; i<9; i++)
+            for (int j=0; j<9; j++)
+            {
+                aux = m[i][j];
+                arr[aux]++;
+                if (arr[aux]>9)
+                return false;
+            }
             return true;
         }
         return false;
