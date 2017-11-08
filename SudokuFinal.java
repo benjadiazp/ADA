@@ -18,18 +18,10 @@ public class SudokuFinal
         int matriz[][];
         System.out.println("Ingrese Sudoku.\n");
         matriz = leerMatriz();
-    
-        if (siguienteCelda(matriz, new int[] { 0, -1 }) != null) //Comprueba si hay espacios vacìos.
-        {
-            //La posición de la celda es un arreglo tamaño 2, donde c[0] = x y c[1] = y.
-            backtracking(matriz, new int[] { 0, -1 });
-            System.out.println("\n\nNo hay solución.\n");
-            imprimirMatriz(new int[9][9]); //Matriz de ceros.
-        }
-        else
-        {
-            System.out.println("Sudoku lleno.");
-        }
+        //La posición de la celda es un arreglo tamaño 2, donde c[0] = x y c[1] = y.
+        backtracking(matriz, new int[] { 0, -1 });
+        System.out.println("\n\nNo hay solución.\n");
+        imprimirMatriz(new int[9][9]); //Matriz de ceros.
     }
 
     public static void backtracking(int[][] m, int[] celda)
@@ -82,7 +74,7 @@ public class SudokuFinal
     {
         if (siguienteCelda(m, c) == null) //Si no quedan celdas vacías, el sudoku está completo.
         {
-            int[] arr = new int[9];
+            int[] arr = new int[10];
             int aux=0;
             for (int i=0; i<9; i++)
             for (int j=0; j<9; j++)
