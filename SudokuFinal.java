@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class SudokuFinal 
 {
+    static int cont=0;
 
 /****************************
+*                           *
 *   Integrantes:            *
 *                           *
 *   Benjamín Díaz           *
@@ -11,6 +13,7 @@ public class SudokuFinal
 *   Juan Muñoz              *
 *   Francisca Palma         *
 *   Camila Pinto            *
+*                           *
 ****************************/
 
     public static void main(String[] args) 
@@ -22,10 +25,49 @@ public class SudokuFinal
         backtracking(matriz, new int[] { 0, -1 });
         System.out.println("\n\nNo hay solución.\n");
         imprimirMatriz(new int[9][9]); //Matriz de ceros.
+
+
+        // write your code here
+        int largo;
+        LinkedList<Integer> numeros = new LinkedList<>();
+        Scanner lala = new Scanner(System.in);
+
+        System.out.println("Ingrese el largo: ");
+        largo = lala.nextInt();
+        //genera el arreglo que paja ingresarlo
+        for (int i = 0; i < largo; i++) {
+            numeros.add((int) (Math.random() * largo * 2) + 1);
+        }
+        //lo ordena
+        Collections.sort(numeros);
+
+        System.out.println("Ingrese el numero: ");
+        int n= lala.nextInt();
+        //solo para ver el arreglo creado
+        for (int i : numeros) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        //borrando los mayores
+        LinkedList<Integer> num2= new LinkedList<>();
+        for (int i=0;i<numeros.size();i++) {
+            if(numeros.get(i)<=n){
+                num2.add(numeros.get(i));
+            }
+            else{
+                break;
+            }
+        }
+
+        //para ver el arreglo nuevo c:
+        for (int i : num2) {
+            System.out.print(i+" ");
+        }
     }
 
     public static void backtracking(int[][] m, int[] celda)
     {
+        cont++;
         if (Reject(m, celda)) return;
         if (Accept(m, celda)) output(m);
         int[] sC = siguienteCelda(m, celda);
@@ -66,7 +108,6 @@ public class SudokuFinal
                 }
             }
         }
-        
         return false;
     }
 
@@ -87,7 +128,6 @@ public class SudokuFinal
             return true;
         }
         return false;
-
     }
 
     static void imprimirMatriz(int[][] matriz) 
@@ -105,8 +145,8 @@ public class SudokuFinal
     {
         System.out.println("\n\nSudoku terminado:\n");
         imprimirMatriz(matriz);
+        System.out.println("Cont: " + cont);
         System.exit(0);
-
     }
 
     static boolean First(int[][] m, int[] c) 
