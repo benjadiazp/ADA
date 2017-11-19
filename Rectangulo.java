@@ -18,13 +18,11 @@ public class Rectangulo
         System.out.println("Ingrese y2");
         y2 = sc.nextInt();
         sc.close();
-
         for (int i = 0; i < m ; i++) 
         {
-            for (int j = 0; j < n; j++) if (i >= x1 && i <= x2 && j >= y1 && j <= y2) System.out.println(1);
-            else System.out.print(0);
+            for (int j = 0; j < n; j++) if (i >= x1 && i <= x2 && j >= y1 && j <= y2) System.out.print('*');
+            else System.out.print('.');
             System.out.println();
         }
-        sc.close();
     }
 }
