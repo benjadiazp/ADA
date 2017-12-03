@@ -1,9 +1,7 @@
 import java.util.Scanner;
 public class Mochila
 {
-
     static int[] arrAprox;
-
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
@@ -12,7 +10,6 @@ public class Mochila
         System.out.println("Ingrese espacio de la mochila");
         int N = sc.nextInt();
         sc.close();
-
         if (N >= 550)
         {
             arr[100] = 2; //1 unidad de agua
@@ -32,9 +29,7 @@ public class Mochila
         int sumaArr = sumaArr(pesos, arr);
         if (sumaArr > N) return; //Reject
         if (sumaArr == N) output(pesos, arr); //Accept
-
         if (sumaArr > sumaArr(pesos, arrAprox)) arrAprox = copiarArreglo(arr);
-
         for (int i=aux; i>0; i--) if (arr[i] != 0) //First: aux, Next: i--
         {
             arr[i]++;
@@ -76,7 +71,6 @@ public class Mochila
             }
             System.out.println((arr[i]-1) + "x " + nombreCosa + " (Peso " + i + ") \t= " + (arr[i]-1) * i);
         }
-            
         System.exit(0);
     }
 
