@@ -21,11 +21,13 @@ public class Nov13
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
+        
         int [] arr = input(sc);
         System.out.println("Ingrese EL número");
         int n = sc.nextInt(); sc.close();
         output(arr);
         backtracking(cortarArreglo(arr, n), new LinkedList<Integer>(), n, 0);
+
     }
 
     static void backtracking(int[] arr, LinkedList<Integer> c, int n, int cont) //La función que importa.
@@ -81,6 +83,7 @@ public class Nov13
         System.out.println("Ingrese tamaño del arreglo.");
         int [] arr = new int[sc.nextInt()];
         for (int i=0; i<arr.length; i++) arr[i] = (int)(Math.random()*20) + 1; //Rellena con números del 1 al 20.
+        output(arr);
         Arrays.sort(arr);
         return arr;
     }
